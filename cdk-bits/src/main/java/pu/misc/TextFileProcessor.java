@@ -59,6 +59,7 @@ public abstract class TextFileProcessor
 		}
 		catch (FileNotFoundException e) {
 			errors.add(e.getMessage());
+			return;
 		}		
 		
 		try {

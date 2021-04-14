@@ -46,9 +46,13 @@ public class PartialCharges
 			
 		};
 		
+		
 			
 		tfp.iterateFile();
-				
+		
+		if (!tfp.getErrors().isEmpty())
+			System.out.println(tfp.getAllErrorsAsString());
+		
 	}
 	
 	
