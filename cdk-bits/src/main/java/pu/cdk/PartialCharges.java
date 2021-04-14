@@ -11,8 +11,11 @@ import org.openscience.cdk.charges.IChargeCalculator;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 
+import pu.misc.TextFileProcessor;
+
 public class PartialCharges 
 {
+
 	
 	public static String getPartialChargesAsString(IAtomContainer mol, IChargeCalculator chargeCalc) throws Exception
 	{
@@ -31,5 +34,24 @@ public class PartialCharges
 	}
 	
 	
+	public static void calculateChargesForFileWithSmiles(String inputFileName)  
+	{
+		TextFileProcessor tfp = new TextFileProcessor(inputFileName) {
+
+			@Override
+			public void processLine(String line, int lineNumber) {
+				System.out.println("Line " + lineNumber + " " + line) ;
+				
+			}
+			
+		};
+		
+			
+		tfp.iterateFile();
+				
+	}
+	
+	
+		
 	
 }
